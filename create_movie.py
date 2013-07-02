@@ -13,7 +13,7 @@ from PIL import Image, ImageFont, ImageDraw
 FFMPEG_PATH = "/usr/local/bin/ffmpeg"
 
 # ファイル出力するPATH
-FLV_SAVE_PATH = "/Users/kossy7/fftest"
+FLV_SAVE_PATH = os.getenv("PATH")
 
 class Make_file:
     
@@ -57,7 +57,7 @@ class Make_file:
     # 画像と音楽をひとつずつ動画に変換
     def convert2mpg(self):
         """
-        ffmpeg -i "風車男ルリオ.mp3" -loop 1 -f image2 -i "風車男ルリオ.png" -vcodec mpeg1video -b 50k -ab 256k -shortest "風車男ルリオ.mpg"
+        ffmpeg -i "sample.mp3" -loop 1 -f image2 -i "sample.png" -vcodec mpeg1video -b 50k -ab 256k -shortest "sample.mpg"
         """
         #for name in self.names:
         for i in range(len(self.names)):
@@ -142,6 +142,6 @@ if __name__ == '__main__':
 
 
     else:
-        print "引数がありませんよね"
+        print "引数がありません。"
 
 
