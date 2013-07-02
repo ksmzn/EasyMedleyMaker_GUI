@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 #-*- encoding:utf-8 -*-
 
-#import os.path
+import os
 from os import path
 from unicodedata import normalize
 from subprocess import Popen, PIPE, call
